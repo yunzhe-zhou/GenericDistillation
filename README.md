@@ -24,3 +24,37 @@ In addtion, to install the `pyfim` package, use the following commands in order:
 - `python setup.py install`
 
 ## File Overview
+- `FRL/`: This folder contains all python codes for the distillation of Falling Rule List model
+  - `monotonic/`: This folder contains the implementation of Falling Rule List model (https://users.cs.duke.edu/~cynthia/code.html)
+  - `pyfim/`: This folder helps to install the pyfim package for creating the rule set.
+  - `result/`: This folder is where the results should go. First run `load_results.ipynb` to load the results and then run `plot.Rmd` to generate the plots.
+  - `distill_utils.py`: This contains the utility functions.
+  - `run_FRL_data1.py`: The code to run the experiments for Mammographic Mass Data.
+  - `run_FRL_data2.py`: The code to run the experiments for Breast Cancer Data.
+  - `run.sh`: Run the commands inside it to reproduce the results of the paper.
+- `SymRegress/`: This folder contains all python codes for the distillation of Symbolic regression model
+  - `gplearn/`: This folder contains the implementation of Symbolic regression model (https://gplearn.readthedocs.io/en/stable/)
+  - `result/`: This folder is where the results should go. First run `load_results.ipynb` to load the results and then run `plot.Rmd` to generate the plots.
+  - `run_symbolic_data1.py`: The code to run the experiments for Mammographic Mass Data.
+  - `run_symbolic_data2.py`: The code to run the experiments for Breast Cancer Data.
+  - `run.sh`: Run the commands inside it to reproduce the results of the paper.
+- `Tree/`: This folder contains all python codes for the distillation of Decision Tree model
+  - `result/`: This folder is where the results should go. First run `load_results.ipynb` to load the results and then run `plot.Rmd` to generate the plots.
+  - `run_tree_data1.py`: The code to run the experiments for Mammographic Mass Data.
+  - `run_tree_data2.py`: The code to run the experiments for Breast Cancer Data.
+  - `run.sh`: Run the commands inside it to reproduce the results of the paper
+- `uci_mammo_data.csv`: Mammographic Mass Data
+
+## Citation
+ 
+Please cite our paper
+["A Generic Approach for Reproducible Model Distillation"](https://arxiv.org/abs/2211.12631) 
+
+``` 
+@article{zhou2022generic,
+  title={A Generic Approach for Statistical Stability in Model Distillation},
+  author={Zhou, Yunzhe and Xu, Peiru and Hooker, Giles},
+  journal={arXiv preprint arXiv:2211.12631},
+  year={2022}
+}
+``` 
