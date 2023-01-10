@@ -14,5 +14,13 @@ Model distillation has been a popular method for producing interpretable machine
 | Mammographic Mass Data | Breast Cancer Data |  Independent Sampling |
 | <img align="center" src="heatmap1.png" alt="drawing" width="300">   | <img align="center" src="heatmap2.png" alt="drawing" width="300" > | <img align="center" src="heatmap_ind.png" alt="drawing" width="300" > |
 
-# Commands
+## Requirement
 Use `pip3 install -r requirements.txt` to install required packages.
+
+In addtion, to install the `pyfim` package, use the following commands in order:
+
+- `cd FRL/pyfim`
+- `chmod +x setup.py`
+- `python setup.py install`
+
+## File Overview
