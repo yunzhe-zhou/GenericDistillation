@@ -1,0 +1,41 @@
+---
+title: "plot"
+output: html_document
+---
+
+```{r}
+library(ggplot2)
+df = read.csv("tree_data1_n_sim.csv")
+p1 =ggplot(df, aes(x = type, y = percent),fill="grey") + 
+  geom_bar(stat = 'identity', position = 'stack')+ theme(legend.position = "none") +
+  geom_col(color = "white",size=0.2)  + facet_grid(~ feature)  + xlab("") + ylab("Proportion") + labs(title="Different Numbers of Candidate Models \n (Mammographic Mass Data)")  + theme(plot.title = element_text(hjust = 0.5,size=12))+ scale_y_continuous(breaks=seq(0,1,by=0.1))
+
+df = read.csv("tree_data2_n_sim.csv")
+p2 =ggplot(df, aes(x = type, y = percent),fill="grey") + 
+  geom_bar(stat = 'identity', position = 'stack')+ theme(legend.position = "none") +
+  geom_col(color = "white",size=0.2)  + facet_grid(~ feature) + xlab("") + ylab("Proportion")+ labs(title="Different Numbers of Candidate Models \n (Breast Cancer Data)")  + theme(plot.title = element_text(hjust = 0.5,size=12))+ scale_y_continuous(breaks=seq(0,1,by=0.1))
+
+df = read.csv("tree_data1_len_max.csv")
+p3 =ggplot(df, aes(x = type, y = percent),fill="grey") + 
+  geom_bar(stat = 'identity', position = 'stack')+ theme(legend.position = "none") +
+  geom_col(color = "white",size=0.2)  + facet_grid(~ feature)  + xlab("") + ylab("Proportion") + labs(title="Different Maximum Depth for Tree Structure \n (Mammographic Mass Data)")  + theme(plot.title = element_text(hjust = 0.5,size=12))+ scale_y_continuous(breaks=seq(0,1,by=0.1))
+
+df = read.csv("tree_data2_len_max.csv")
+p4 =ggplot(df, aes(x = type, y = percent),fill="grey") + 
+  geom_bar(stat = 'identity', position = 'stack')+ theme(legend.position = "none") +
+  geom_col(color = "white",size=0.2)  + facet_grid(~ feature) + xlab("") + ylab("Proportion")+ labs(title="Different Maximum Depth for Tree Structure \n (Breast Cancer Data)")  + theme(plot.title = element_text(hjust = 0.5,size=12))+ scale_y_continuous(breaks=seq(0,1,by=0.1))
+
+df = read.csv("tree_data1_nmax.csv")
+p5 =ggplot(df, aes(x = type, y = percent),fill="grey") + 
+  geom_bar(stat = 'identity', position = 'stack')+ theme(legend.position = "none") +
+  geom_col(color = "white",size=0.2)  + facet_grid(~ feature)  + xlab("") + ylab("Proportion") + labs(title="Different Maximum Sample Size \n (Mammographic Mass Data)")  + theme(plot.title = element_text(hjust = 0.5,size=12))+ scale_y_continuous(breaks=seq(0,1,by=0.1))
+
+df = read.csv("tree_data2_nmax.csv")
+p6 =ggplot(df, aes(x = type, y = percent),fill="grey") + 
+  geom_bar(stat = 'identity', position = 'stack')+ theme(legend.position = "none") +
+  geom_col(color = "white",size=0.2)  + facet_grid(~ feature) + xlab("") + ylab("Proportion")+ labs(title="Different Maximum Sample Size \n (Breast Cancer Data)")  + theme(plot.title = element_text(hjust = 0.5,size=12))+ scale_y_continuous(breaks=seq(0,1,by=0.1))
+
+library(patchwork)
+p1 +p2 + p3 + p4+ p5 + p6 + plot_layout(heights  = 5,ncol=2)
+ggsave(filename = "tree.png",width = 13, height = 10, dpi = 1000)
+```

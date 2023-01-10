@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: fim
+Version: 6.28.-2017.03.24-
+Summary: Frequent Item Set Mining and Association Rule Induction for Python
+Home-page: http://www.borgelt.net/pyfim.html
+Download-URL: http://www.borgelt.net/pyfim.html
+Author: Christian Borgelt
+Author-email: christian@borgelt.net
+Maintainer: Christian Borgelt
+Maintainer-email: christian@borgelt.net
+License: MIT License (Expat License)
+Platform: Linux/Unix
+Platform: Microsoft Windows
+
+Frequent Item Set Mining and Association Rule Induction for Python
+
